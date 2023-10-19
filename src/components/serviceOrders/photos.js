@@ -1,41 +1,54 @@
-import React from 'react';
+import React, { useState } from "react";
+import ImageUploader from "react-images-upload";
+
 const Photos = () => {
+  const [pictures, setPictures] = useState([]);
 
-    const handleFileChange = (e) => {
-        const selectedFiles = e.target.files; // Get an array of selected files
-        const imageContainer = document.getElementById('image-container'); 
+  const handleFileChange = (selectedFiles) => {
+    setPictures(selectedFiles);
+  };
 
-        if (selectedFiles.length > 0) {
-          for (let i = 0; i < selectedFiles.length; i++) {
-            const file = selectedFiles[i];
-            const reader = new FileReader();
-      
-            reader.onload = (e) => {
-              const img = document.createElement('img');
-              img.src = e.target.result;
-              imageContainer.appendChild(img);
-            };
-      
-            reader.readAsDataURL(file);
+  return (
+    <div>
+      <ImageUploader
+        withIcon={false}
+        buttonText=""
+        buttonClassName="add_image_button"
+        buttonStyles={{ display: "none" }}
+        onChange={handleFileChange}
+        imgExtension={[".jpg", ".png"]}
+        maxFileSize={5242880}
+        label="Fotos del trabajo"
+        fileContainerStyle={{
+          boxShadow: "none",
+          padding: 0,
+          display: "inline",
+          margin: 0,
+        }}
+      />
+      <button
+        onClick={() => {
+          const hiddenButton = document.querySelector(".add_image_button");
+          if (hiddenButton) {
+            hiddenButton.click();
           }
-        }
-      }
-      const handleFileUpload = () => {
-        const input = document.createElement('input');
-        input.type = 'file';
-        input.accept = 'image/*'; // Esto limitará la selección a archivos de imagen
-        input.multiple = true;
-        input.click();
-    
-        input.addEventListener('change', handleFileChange);
-      };
-    return (
-        <div>
-            <h3>Seleccionar foto</h3>
-        <button onClick={handleFileUpload}>Seleccionar una imagen</button>
-        <div id="image-container"></div>
-        </div>
-    )
+        }}
+      >
+        Another button
+      </button>
+      {pictures.map((image, index) => {
+        return (
+          <div>
+            <img
+              key={index}
+              src={URL.createObjectURL(image)}
+              alt={`Imagen ${index}`}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Photos;
