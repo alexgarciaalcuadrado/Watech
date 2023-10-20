@@ -36,9 +36,11 @@ const Photos = () => {
       >
         Another button
       </button>
+      <div>
       {pictures.map((image, index) => {
         return (
           <div>
+            <button>Delete</button>
             <img
               key={index}
               src={URL.createObjectURL(image)}
@@ -47,6 +49,8 @@ const Photos = () => {
           </div>
         );
       })}
+      </div>
+      
     </div>
   );
 };

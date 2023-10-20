@@ -1,9 +1,22 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute";
 import Photos from "./components/serviceOrders/photos";
-function App() {
+import Login from "./components/login";
+const App = () => {
   return (
-    <div className="App">
-      <Photos/>
-    </div>
+    <Router>
+        <Routes>
+          <Route exact path="/login" element={<Login />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Photos />
+              </ProtectedRoute>
+            }
+          />
+          </Routes>
+          </Router>
   );
 }
 
