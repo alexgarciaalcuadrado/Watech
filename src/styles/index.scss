@@ -2,6 +2,8 @@ h1,h2,h3,h4,h5,h6 p {
     font-family: 'Work Sans', sans-serif;
 }
 
+@import "./variables.scss";
+@import "./mixins.scss";
 @import "./login.scss";
 @import "./buttons.scss";
 @import "./photosForm.scss";

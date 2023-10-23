@@ -23,7 +23,6 @@ const Login = () => {
         <Box className="logo_container">
           <img className="logo" src={Logo} alt="support-it logo" />
         </Box>
-        <div>
           <Formik
             initialValues={{ user: "", password: "" }}
             validationSchema={loginSchema}
@@ -32,6 +31,8 @@ const Login = () => {
             {({ isSubmitting, values, errors }) => {
               return (
                 <Form className="form_container">
+                  <div className="flex">
+
                   <h4>Usuario</h4>
                   <Field type="text" className="input" name="user" />
                   <ErrorMessage
@@ -46,12 +47,7 @@ const Login = () => {
                     name="password"
                     component="h5"
                   />
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
+                  <div className="button_container">
                     <RedButton
                       title="ingresar"
                       type="submit"
@@ -65,11 +61,12 @@ const Login = () => {
                       }
                     />
                   </div>
+                  </div>
+
                 </Form>
               );
             }}
           </Formik>
-        </div>
       </div>
     </>
   );

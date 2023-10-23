@@ -2,6 +2,12 @@
     background-color: #eeeded;
     height: 100%;
 
+    @include breakpoint(big_screen) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .logo_container{
         display: flex;
         align-items: center;
@@ -10,6 +16,12 @@
         height: 50%;
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
+
+        @include breakpoint(big_screen) {
+            height: 100%;
+            width: 50%;
+        }
+
         .logo{
             height: 65px;
             width: 401px;
@@ -20,7 +32,23 @@
     .form_container{
         display: flex;
         flex-direction: column;
-        margin: 50px 30px;
+        padding: 50px 30px;
+        background-color: #eeeded;
+
+        @include breakpoint(big_screen) {
+            height: 100%;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flex{
+            display: flex;
+            flex-direction: column;        
+            @include breakpoint(big_screen) {
+                max-width: 400px;
+            }
+        }
 
         h4{
             margin: 0;
@@ -34,6 +62,10 @@
             padding: 15px;
             font-size: 15px;
             margin: 10px 0;
+
+            @include breakpoint(big_screen) {
+                width: 400px;
+            }
             
             &:focus-visible{
                 outline-color: #e53935;
@@ -43,6 +75,15 @@
         .error_mesagge{
             margin: 5px;
             color:#e53935;
+        }
+
+        .button_container{
+            display: flex;
+            justify-content: center;
+
+            @include breakpoint(big_screen) {
+                max-width: 400px;
+            }
         }
     }
 }
