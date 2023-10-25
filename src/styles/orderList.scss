@@ -1,0 +1,39 @@
+.order_list_container{
+    width: 100%;
+    height: 80%;
+    margin: 10px 0;
+    overflow: scroll;
+    max-width: 360px;
+
+    .list{
+        .header{
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: black;
+            background-color: rgb(238, 237, 237);
+        }
+    
+        .item{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 2px solid #c1bbbb;
+            min-height: 70px;
+            padding: 10px 0;
+            cursor: pointer;
+
+            h4{
+                margin: 10px 0;
+            }
+        }
+
+        &:last-child {
+            border-bottom: 2px solid #c1bbbb;
+            padding: 0;
+        }
+    }
+    
+    
+}

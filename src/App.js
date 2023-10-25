@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import Photos from "./components/serviceOrders/photos";
 import Login from "./components/login";
+import OrdersList from "./components/OrdersList";
 const App = () => {
   return (
     <Router>
@@ -11,7 +12,7 @@ const App = () => {
             path="/"
             element={
               <ProtectedRoute>
-                <Photos />
+                <OrdersList />
               </ProtectedRoute>
             }
           />
