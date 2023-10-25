@@ -6,6 +6,8 @@ import HomeIcon from "@mui/icons-material/Home";
 import DescriptionIcon from "@mui/icons-material/Description";
 import SettingsIcon from "@mui/icons-material/Settings";
 import MenuIcon from "@mui/icons-material/Menu";
+import AddIcon from "@mui/icons-material/Add";
+import IconButton from "@mui/material/IconButton";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -36,10 +38,28 @@ const Navbar = () => {
           },
         }}
       >
-        <BottomNavigationAction label="Inicio" icon={<HomeIcon />} onClick={() => {
-          navigate("/");
-        }}/>
+        <BottomNavigationAction
+          label="Inicio"
+          icon={<HomeIcon />}
+          onClick={() => {
+            navigate("/");
+          }}
+        />
         <BottomNavigationAction label="Ordenes" icon={<DescriptionIcon />} />
+        <IconButton
+          sx={{
+            backgroundColor: "#e53935",
+            color: "#fff",
+            border: "2px solid #fff",
+            boxShadow: "0px 0px 11px -1px rgba(0,0,0,0.75)",
+            position: "relative",
+            bottom: "40px",
+            width: "55px",
+          }}
+          aria-label="agregar"
+        >
+          <AddIcon />
+        </IconButton>
         <BottomNavigationAction label="Ajustes" icon={<SettingsIcon />} />
         <BottomNavigationAction label="Menú" icon={<MenuIcon />} />
       </BottomNavigation>
