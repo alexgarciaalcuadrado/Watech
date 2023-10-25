@@ -37,7 +37,6 @@ const Navbar = () => {
         }}
       >
         <BottomNavigationAction label="Inicio" icon={<HomeIcon />} onClick={() => {
-          console.log("naviagte")
           navigate("/");
         }}/>
         <BottomNavigationAction label="Ordenes" icon={<DescriptionIcon />} />
