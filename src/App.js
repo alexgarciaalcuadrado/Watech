@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
-import Photos from "./components/serviceOrders/photos";
 import Login from "./components/login";
 import OrdersList from "./components/OrdersList";
 import OrdersTable from "./components/ordersTable";
+import ServiceOrders from "./components/serviceOrders";
 const App = () => {
   return (
     <Router>
@@ -22,6 +22,14 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <OrdersTable />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/new-order"
+            element={
+              <ProtectedRoute>
+                <ServiceOrders />
               </ProtectedRoute>
             }
           />

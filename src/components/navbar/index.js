@@ -63,6 +63,9 @@ const Navbar = () => {
             width: "55px",
           }}
           aria-label="agregar"
+          onClick={() => {
+            navigate("/new-order");
+          }}
         >
           <AddIcon />
         </IconButton>
