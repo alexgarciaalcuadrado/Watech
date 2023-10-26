@@ -45,7 +45,13 @@ const Navbar = () => {
             navigate("/");
           }}
         />
-        <BottomNavigationAction label="Ordenes" icon={<DescriptionIcon />} />
+        <BottomNavigationAction
+          label="Ordenes"
+          icon={<DescriptionIcon />}
+          onClick={() => {
+            navigate("/order-table");
+          }}
+        />
         <IconButton
           sx={{
             backgroundColor: "#e53935",

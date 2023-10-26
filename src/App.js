@@ -3,6 +3,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import Photos from "./components/serviceOrders/photos";
 import Login from "./components/login";
 import OrdersList from "./components/OrdersList";
+import OrdersTable from "./components/ordersTable";
 const App = () => {
   return (
     <Router>
@@ -13,6 +14,14 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <OrdersList />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/order-table"
+            element={
+              <ProtectedRoute>
+                <OrdersTable />
               </ProtectedRoute>
             }
           />
