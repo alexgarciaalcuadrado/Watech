@@ -15,7 +15,7 @@ const Navbar = () => {
   const [value, setValue] = useState(0);
 
   return (
-    <Box>
+    <Box sx={{position:"fixed", bottom:0, width:"100%"}}>
       <BottomNavigation
         showLabels
         value={value}

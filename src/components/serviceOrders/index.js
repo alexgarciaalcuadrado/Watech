@@ -42,7 +42,8 @@ const ServiceOrders = () => {
         ) : (
           <></>
         )}
-      <RedButton
+        <Box style={{marginTop:"50px", width: "100%"}}>
+        <RedButton
         title="Siguiente"
         type="submit"
         onClick={() => {
@@ -52,6 +53,7 @@ const ServiceOrders = () => {
         }}
         disabled={false}
       />
+        </Box>
     </Box>
   );
 };
