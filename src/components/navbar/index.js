@@ -5,7 +5,7 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import HomeIcon from "@mui/icons-material/Home";
 import DescriptionIcon from "@mui/icons-material/Description";
 import SettingsIcon from "@mui/icons-material/Settings";
-import MenuIcon from "@mui/icons-material/Menu";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AddIcon from "@mui/icons-material/Add";
 import IconButton from "@mui/material/IconButton";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +15,7 @@ const Navbar = () => {
   const [value, setValue] = useState(0);
 
   return (
-    <Box sx={{position:"fixed", bottom:0, width:"100%"}}>
+    <Box sx={{ position: "fixed", bottom: 0, width: "100%" }}>
       <BottomNavigation
         showLabels
         value={value}
@@ -70,7 +70,13 @@ const Navbar = () => {
           <AddIcon />
         </IconButton>
         <BottomNavigationAction label="Ajustes" icon={<SettingsIcon />} />
-        <BottomNavigationAction label="Menú" icon={<MenuIcon />} />
+        <BottomNavigationAction
+          label="Salir"
+          icon={<ExitToAppIcon />}
+          onClick={() => {
+            navigate("/login");
+          }}
+        />
       </BottomNavigation>
     </Box>
   );
