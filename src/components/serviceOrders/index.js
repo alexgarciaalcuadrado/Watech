@@ -5,6 +5,7 @@ import { IoIosArrowDropleftCircle } from "react-icons/io";
 import RedButton from "../buttons/redButton";
 import WorkDescription from "./workDescription";
 import Photos from "./photos";
+import Signature from "./signature";
 
 const ServiceOrders = () => {
   const [currentStep, setCurrentSetp] = useState(1);
@@ -39,16 +40,23 @@ const ServiceOrders = () => {
           <WorkDescription />
         ) : currentStep === 2 ? (
           <Photos />
+        ) : currentStep === 3 ?(
+          <Signature />
         ) : (
           <></>
         )}
         <Box style={{marginTop:"50px", width: "100%"}}>
         <RedButton
-        title="Siguiente"
+        title={currentStep === 3 ? "Finalizar" : "Siguiente"}
         type="submit"
         onClick={() => {
-          if (currentStep !== 1) {
-            setCurrentSetp(currentStep - 1);
+          if (currentStep === 1 || currentStep === 2) {
+            setCurrentSetp(currentStep + 1);
+          } else {
+            const hiddenButton = document.querySelector(".save_signature_button");
+          if (hiddenButton) {
+            hiddenButton.click();
+          };
           }
         }}
         disabled={false}
