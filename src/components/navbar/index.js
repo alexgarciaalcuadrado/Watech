@@ -46,29 +46,12 @@ const Navbar = () => {
           }}
         />
         <BottomNavigationAction
-          label="Ordenes"
+          label="Sensos"
           icon={<DescriptionIcon />}
           onClick={() => {
             navigate("/order-table");
           }}
         />
-        <IconButton
-          sx={{
-            backgroundColor: "#e53935",
-            color: "#fff",
-            border: "2px solid #fff",
-            boxShadow: "0px 0px 11px -1px rgba(0,0,0,0.75)",
-            position: "relative",
-            bottom: "40px",
-            width: "55px",
-          }}
-          aria-label="agregar"
-          onClick={() => {
-            navigate("/new-order");
-          }}
-        >
-          <AddIcon />
-        </IconButton>
         <BottomNavigationAction label="Ajustes" icon={<SettingsIcon />} />
         <BottomNavigationAction
           label="Salir"

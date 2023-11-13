@@ -5,52 +5,29 @@ import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const OrdersList = () => {
+  const navigate = useNavigate();
   const mocked = [
     {
       date: "10/10/2023",
-      title: "Argen Fruit S.S.",
-      state: "Sin firmar",
+      title: "Revisión diaria",
+      state: "Revisar",
     },
     {
       date: "9/10/2023",
-      title: "Canal 9 televida",
+      title: "Revisión diaria",
       state: "Completada",
     },
     {
-      date: "10/10/2023",
-      title: "Argen Fruit S.S.",
+      date: "8/10/2023",
+      title: "Revisión diaria",
       state: "Completada",
     },
     {
-      date: "10/10/2023",
-      title: "Argen Fruit S.S.",
-      state: "Sin firmar",
-    },
-    {
-      date: "9/10/2023",
-      title: "Canal 9 televida",
-      state: "Completada",
-    },
-    {
-      date: "10/10/2023",
-      title: "Argen Fruit S.S.",
-      state: "Completada",
-    },
-    {
-      date: "10/10/2023",
-      title: "Argen Fruit S.S.",
-      state: "Sin firmar",
-    },
-    {
-      date: "9/10/2023",
-      title: "Canal 9 televida",
-      state: "Completada",
-    },
-    {
-      date: "10/10/2023",
-      title: "Argen Fruit S.S.",
+      date: "7/10/2023",
+      title: "Revisión diaria",
       state: "Completada",
     },
   ];
@@ -66,13 +43,15 @@ const OrdersList = () => {
             className="header"
             id="nested-list-subheader"
           >
-            Últimas ordenes de servicio
+            Últimos sensos
           </ListSubheader>
         }
       >
         {mocked.map((item) => {
           return (
-            <ListItemButton className="item">
+            <ListItemButton className="item" onClick={() => {
+              navigate(`/revision`, {state: {data: item}});
+            }}>
               <Box>
                 <h4 style={{ fontSize: "14px" }}>
                   {item.date} -{" "}
@@ -80,11 +59,11 @@ const OrdersList = () => {
                 </h4>
                 <h4 style={{ fontSize: "13px" }}>
                   Estado:{" "}
-                  <span style={{ fontWeight: "400" }}>{item.state}</span>
+                  <span style={{ fontWeight: "400", color: item.state === "Completada" ? "green" : "#ff0000" }}>{item.state}</span>
                 </h4>
               </Box>
               <ListItemIcon style={{justifyContent: "end"}}>
-                <IoIosArrowDroprightCircle size={"25px"} color="#e53935"/>
+                <IoIosArrowDroprightCircle size={"25px"} color="#64a8e6"/>
               </ListItemIcon>
             </ListItemButton>
           );

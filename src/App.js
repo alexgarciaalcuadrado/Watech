@@ -2,8 +2,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import Login from "./components/login";
 import OrdersList from "./components/OrdersList";
-import OrdersTable from "./components/ordersTable";
 import ServiceOrders from "./components/serviceOrders";
+import Home from "./components/home";
+import Revision from "./components/revision";
 const App = () => {
   return (
     <Router>
@@ -13,7 +14,7 @@ const App = () => {
             path="/"
             element={
               <ProtectedRoute>
-                <OrdersList />
+                <Home />
               </ProtectedRoute>
             }
           />
@@ -21,7 +22,7 @@ const App = () => {
             path="/order-table"
             element={
               <ProtectedRoute>
-                <OrdersTable />
+                <OrdersList />
               </ProtectedRoute>
             }
           />
@@ -30,6 +31,14 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <ServiceOrders />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/revision"
+            element={
+              <ProtectedRoute>
+                <Revision />
               </ProtectedRoute>
             }
           />

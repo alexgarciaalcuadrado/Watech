@@ -12,20 +12,22 @@ body{
     justify-content: space-between;
 
     .logo{
-        width: 150px;
-        margin: 15px;
+        width: 200px;
+        height: 75px;
+        margin: 0 15px;
     }
 
-    h3{
+    h4{
         margin-right: 15px;
+        color: #01256e;
     }
 }
 
 .route-container{
     display: flex;
+    min-height: 100%;
     flex-direction: column;
-    height: 100%;
-    margin-top: 40px;
+    margin-top: 55px;
     justify-content: space-between;
     background-color: #eeeded;
 
