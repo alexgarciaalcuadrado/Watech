@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Box } from "@mui/material";
-import Logo from "../../assets/logo.svg";
+import Logo from "../../assets/Watech.jpg";
 import RedButton from "../buttons/redButton";
 import { useNavigate } from "react-router-dom";
 
